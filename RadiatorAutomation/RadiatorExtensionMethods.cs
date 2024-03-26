@@ -2,7 +2,7 @@ using System.Reactive.Linq;
 using NetDaemon.HassModel;
 using NetDaemon.HassModel.Entities;
 
-namespace NEACustomLib.lib;
+namespace RadiatorAutomation;
 
 public static class RadiatorExtensionMethods
 {

@@ -1,7 +1,6 @@
 using System.Globalization;
 using System.Reactive.Linq;
 using Microsoft.Extensions.Logging;
-using NEACustomLib.lib;
 using NetDaemon.HassModel.Entities;
 using NetEntityAutomation.Core.Automations;
 
@@ -29,10 +28,10 @@ public class RoomTempRadiator: AutomationBase<ISensorEntityCore>
         
         HighTempEvent().Subscribe(e =>
         {
-            // var old = double.Parse(e.Old?.State!);
-            // var current = double.Parse(e.New?.State!);
-            //
-            // if (old < current || current < MaxTemp || old > current) return;
+            var old = double.Parse(e.Old?.State!);
+            var current = double.Parse(e.New?.State!);
+            
+            if (old < current || current < MaxTemp || old > current) return;
             Logger.LogDebug("High temp event fired");
             Radiators.SetTemperature(HittingTemp);
         });
