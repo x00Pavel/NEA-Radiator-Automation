@@ -7,3 +7,5 @@ appsettings.Development.json
 #appsettings.json
 #HomeAssistantGenerated.cs
 /NetDaemonCodegen/
+/appsettings.json
+/nuget.config
